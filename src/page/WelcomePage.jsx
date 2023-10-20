@@ -1,5 +1,6 @@
 import React from "react";
 import Carousel from "../components/Carousel";
+import List from "../components/List";
 
 function WelcomePage() {
   return (
@@ -11,6 +12,8 @@ function WelcomePage() {
           </div>
         </div>
       </div>
+
+      <List/>
     </div>
   );
 }
