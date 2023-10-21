@@ -55,12 +55,23 @@ export let queryIMDB = async ({keyword}) => {
 
 
 
-// movie page api route
+// movie page api route top rated
 export let fetch_movies = ({page}) => {
   
   let url = "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1";
   if (page) {
     url = `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${page}`
+  }
+  return fetch_func(url, options);
+} 
+
+
+// movie page api route new Movies
+export let fetch_new_movies = ({page}) => {
+  
+  let url = "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1";
+  if (page) {
+    url = `https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${page}`
   }
   return fetch_func(url, options);
 } 

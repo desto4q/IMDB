@@ -1,18 +1,18 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { fetch_movies } from "../api/api";
+import { fetch_movies, fetch_new_movies } from "../api/api";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import List from "../components/List";
 import Card from "../components/Card";
 import Pagination from "../components/Pagination";
 
-function Movie() {
+function Now_Playing() {
     
   let { page } = useParams();
   let { data:movie_results } = useQuery(
-    ["movie_list", page],
-    async () => await fetch_movies({ page: page })
+    ["recent_movies", page],
+    async () => await fetch_new_movies({ page: page })
   );
 
   let data = movie_results?.results?.map(
@@ -46,11 +46,11 @@ function Movie() {
   return (
     <div className="movie head_room welcome">
       <div className="container">
-        <List title={"Movies"} data={data &&data}/>
+        <List title={"Recent"} data={data &&data}/>
       </div>
       <Pagination/>
     </div>
   );
 }
 
-export default Movie;
+export default Now_Playing;

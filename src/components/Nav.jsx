@@ -51,6 +51,7 @@ function Nav() {
           <NavLink to={"/movie/1"}>Movie</NavLink>
 
           <NavLink to={"/lol"}>series</NavLink>
+          <NavLink to={"/recent/1"}>Recent Movies</NavLink>
         </div>
       </div>
     </nav>

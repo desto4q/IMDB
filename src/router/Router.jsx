@@ -6,6 +6,7 @@ import WelcomePage from '../page/WelcomePage'
 import Nav from '../components/Nav'
 import Search from '../page/Search'
 import Movie from '../page/Movie'
+import Now_Playing from '../page/Now_playing'
 
 
 function Router() {
@@ -16,6 +17,7 @@ function Router() {
         <Route path='/' element={<WelcomePage/>} />
         <Route path='/search/:page' element={<Search/>} />
         <Route path='/movie/:page' element={<Movie/>} />
+        <Route path='/recent/:page' element={<Now_Playing/>} />
     </Routes>
     </BrowserRouter>
   )
