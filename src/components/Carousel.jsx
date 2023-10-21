@@ -14,22 +14,33 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import Caroitem from "./Caroitem";
+import { useQuery } from "react-query";
+import { popular } from "../api/api";
 function Carousel() {
   let arr = [1, 2, 3, 4];
+
+  let { data: caro_data } = useQuery(["caro_data"], popular);
   return (
     <Swiper
       speed={1000}
-      modules={[EffectFade, Pagination,Scrollbar,Navigation]}
+      modules={[EffectFade, Pagination, Scrollbar, Navigation]}
       navigation={true}
-      pagination={{clickable:true}}
+      pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       effect="fade"
       className="swipe"
     >
-      {arr.map((item) => {
+      {caro_data?.results?.map(({ id,release_date,vote_average,original_language, overview, backdrop_path, title }) => {
         return (
-          <SwiperSlide key={item}>
-            <Caroitem num={item} />
+          <SwiperSlide key={id}>
+            <Caroitem
+            rating={vote_average}
+              date={release_date}
+              num={id}
+              desc={overview}
+              img={backdrop_path}
+              title={title}
+            />
           </SwiperSlide>
         );
       })}
