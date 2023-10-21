@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 function Card({ img, title, release, lang, vote, alt, type, orig,id }) {
 
-  let str = ""
-  title = title?.replace(/\s+/g, "-")
+  let link_t = alt ? alt[0].title: title ? title: orig
+  title = link_t?.replace(/\s+/g, "-")
   return (
     <Link className="card" to={`/video/${title}-${id}`}>
       <img

@@ -14,6 +14,7 @@ function VideoPage() {
   //     console.log("Number not found at the end of the string.");
   //   }
 
+    console.log(result)
   return (
     <div className="video_page welcome ">
       <div className="vid_cont">
