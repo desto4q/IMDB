@@ -67,7 +67,7 @@ export let fetch_movies = ({page}) => {
 
 
 // movie page api route new Movies
-export let fetch_new_movies = ({page}) => {
+export let fetch_new_movies = async ({page}) => {
   
   let url = "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1";
   if (page) {
@@ -75,3 +75,11 @@ export let fetch_new_movies = ({page}) => {
   }
   return fetch_func(url, options);
 } 
+
+
+export let  get_movie_details = async ({id}) => {
+  let url = `https://api.themoviedb.org/3/movie/${id}?language=en-US`
+
+  return fetch_func(url,options)
+
+}

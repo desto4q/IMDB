@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Caroitem({ num, img, title, desc, date, rating }) {
+function Caroitem({ num, img, title, desc, date, rating ,id}) {
   // let img = "https://images3.alphacoders.com/124/1241167.png";
+  title= title?.replace(/\s+/g, "-")
   return (
     <div className="caro_item">
       <div className="caro_img">
@@ -24,7 +25,7 @@ function Caroitem({ num, img, title, desc, date, rating }) {
         <p className="desc">{desc && desc}</p>
 
         <div className="links">
-          <Link to={"/sas"} className="watch">
+          <Link to={`/video/${title}-${id}`} className="watch">
             Watch Now
           </Link>
         </div>

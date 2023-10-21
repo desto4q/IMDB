@@ -16,10 +16,15 @@ import "swiper/css/navigation";
 import Caroitem from "./Caroitem";
 import { useQuery } from "react-query";
 import { popular } from "../api/api";
+import { useEffect } from "react";
 function Carousel() {
   let arr = [1, 2, 3, 4];
 
   let { data: caro_data } = useQuery(["caro_data"], popular);
+
+  useEffect(()=>{
+    console.log(caro_data)
+  },[caro_data])
   return (
     <Swiper
       speed={1000}
@@ -40,6 +45,7 @@ function Carousel() {
               desc={overview}
               img={backdrop_path}
               title={title}
+              id={id}
             />
           </SwiperSlide>
         );

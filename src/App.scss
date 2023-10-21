@@ -401,4 +401,48 @@ nav {
     flex-direction: column;
     align-items: center;
   }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    background-color: $night;
+    width: 100%;
+    max-width: 1200px;
+    align-self: center;
+    padding: 24px;
+    border-radius: 8px;
+    gap: 12px;
+    .movie_title {
+      display: flex;
+      gap: 12px;
+      font-size: 38px;
+      align-items: center;
+      .release {
+        font-size: 18px;
+        color: $orange-peel;
+        border-left: 1px solid $yinmn-blue;
+        padding-left: 12px;
+      }
+    }
+
+    .genre {
+      display: flex;
+      gap: 8px;
+      font-size: 14px;
+      align-items: center;
+      .lang {
+        background-color: $orange-peel;
+        font-weight: 600;
+        border-radius: 4px;
+        padding: 4px;
+        color: $night;
+      }
+    }
+    .rating {
+      background-color: $yinmn-blue;
+      width: max-content;
+      border-radius: 4px;
+      padding: 4px;
+    }
+  }
 }
