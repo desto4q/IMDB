@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import WelcomePage from '../page/WelcomePage'
 import Nav from '../components/Nav'
 import Search from '../page/Search'
+import Movie from '../page/Movie'
 
 
 function Router() {
@@ -14,6 +15,7 @@ function Router() {
     <Routes>
         <Route path='/' element={<WelcomePage/>} />
         <Route path='/search/:page' element={<Search/>} />
+        <Route path='/movie/:page' element={<Movie/>} />
     </Routes>
     </BrowserRouter>
   )

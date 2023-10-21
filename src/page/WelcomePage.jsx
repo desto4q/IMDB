@@ -3,11 +3,11 @@ import Carousel from "../components/Carousel";
 import List from "../components/List";
 import Card from "../components/Card";
 import { useQuery } from "react-query";
-import { fetch_movie, now_playing, popular } from "../api/api";
+import { now_playing, popular } from "../api/api";
 import { useEffect } from "react";
 
 function WelcomePage() {
- 
+  
   let { data: current } = useQuery(["data"], now_playing);
 
   useEffect(() => {

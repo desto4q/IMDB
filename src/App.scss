@@ -7,6 +7,12 @@ $yinmn-blue: hsla(212, 44%, 32%, 1);
 $night: hsla(0, 0%, 4%, 1);
 
 $transition--speed: 0.4s;
+
+
+
+.head_room {
+  padding-top: 100px;
+}
 button {
   border: none;
   outline: none;
@@ -76,7 +82,7 @@ nav {
     .links {
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 12px;
       a {
         text-transform: capitalize;
         position: relative;
@@ -336,4 +342,8 @@ nav {
 
 .search {
   margin-top: 100px;
+}
+
+.movie {
+  background-color: $night;
 }

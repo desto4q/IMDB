@@ -48,7 +48,7 @@ function Nav() {
         </form>
 
         <div className="links">
-          <NavLink to={"/Movie"}>Movie</NavLink>
+          <NavLink to={"/movie/1"}>Movie</NavLink>
 
           <NavLink to={"/lol"}>series</NavLink>
         </div>
