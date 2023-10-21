@@ -2,8 +2,37 @@ import { IconSearch } from "@tabler/icons-react";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useSearchStore } from "../stores/search_store";
+import { useNavigation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function Nav() {
+  
+  const setTerm = useSearchStore(state => state.setSearch);
+
+  let navigate = useNavigate()
+  let location = useLocation()
+
+  let Setquery = (e) => {    
+    e.preventDefault()
+    let value = e.target[0].value
+    
+    if (e.target[0].value != "" || e.target[0].value != " ") {
+      
+      if (location.pathname.includes('/search/')) {
+        setTerm(value)  
+      }
+      else {
+        setTerm(value)  
+        navigate("/search/1")
+      }
+      
+    }
+    else {
+     console.log("wrong search")
+    }
+  };
   return (
     <nav className="nav">
       <div className="content">
@@ -11,10 +40,10 @@ function Nav() {
           <Link to={"/"}>Logo</Link>
         </div>
 
-        <form className="search_box">
-          <input type="search" placeholder="search movie here..."  />
+        <form className="search_box" onSubmit={Setquery}>
+          <input type="search" placeholder="search movie here..." />
           <button>
-            <IconSearch/>
+            <IconSearch />
           </button>
         </form>
 
