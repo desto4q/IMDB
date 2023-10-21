@@ -23,7 +23,7 @@ function WelcomePage() {
       title,
       poster_path,
     }) => {
-      return <Card key={id} img={poster_path} title={title}  release={release_date} lang={original_language} vote={vote_average}/>;
+      return <Card key={id} img={poster_path} title={title}  release={release_date} lang={original_language} vote={vote_average} id={id}/>;
     }
   );
 
@@ -32,7 +32,7 @@ function WelcomePage() {
       <div className="hero">
         <div className="content">
           <div className="img_cont">
-            <Carousel />
+            <Carousel  />
           </div>
         </div>
       </div>

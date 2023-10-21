@@ -8,9 +8,8 @@ import Card from "../components/Card";
 import Pagination from "../components/Pagination";
 
 function Movie() {
-    
   let { page } = useParams();
-  let { data:movie_results } = useQuery(
+  let { data: movie_results } = useQuery(
     ["movie_list", page],
     async () => await fetch_movies({ page: page })
   );
@@ -25,12 +24,13 @@ function Movie() {
       poster_path,
       known_for,
       media_type,
-      original_name
+      original_name,
     }) => {
       return (
         <Card
-        orig={original_name}
-        type={media_type}
+          id={id}
+          orig={original_name}
+          type={media_type}
           alt={known_for}
           key={id}
           img={poster_path}
@@ -46,9 +46,9 @@ function Movie() {
   return (
     <div className="movie head_room welcome">
       <div className="container">
-        <List title={"Movies"} data={data &&data}/>
+        <List title={"Movies"} data={data && data} />
       </div>
-      <Pagination/>
+      <Pagination />
     </div>
   );
 }

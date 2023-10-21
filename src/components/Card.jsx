@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Card({ img, title, release, lang, vote, alt, type, orig }) {
+function Card({ img, title, release, lang, vote, alt, type, orig,id }) {
+
+  let str = ""
+  title = title?.replace(/\s+/g, "-")
   return (
-    <Link className="card">
+    <Link className="card" to={`/video/${title}-${id}`}>
       <img
         loading="lazy"
         src={`https://image.tmdb.org/t/p/w500/${
@@ -15,7 +18,7 @@ function Card({ img, title, release, lang, vote, alt, type, orig }) {
         {alt ? alt[0].title : title ? title : orig && orig}
       </div>
       <div className="movie_info">
-        <div>{release && release.slice(0, 4)}</div>
+        <div>{release && release && release.slice(0, 4)}</div>
         <div>{alt ? alt[0].vote_average : vote}</div>
         <div className="lang">{alt ? alt[0].original_language : lang}</div>
         <div className="type">{type && type}</div>

@@ -15,6 +15,8 @@ function Now_Playing() {
     async () => await fetch_new_movies({ page: page })
   );
 
+  // useEffect(()=>{console.log(movie_results)},[movie_results])
+
   let data = movie_results?.results?.map(
     ({
       id,
@@ -38,6 +40,7 @@ function Now_Playing() {
           release={release_date}
           lang={original_language}
           vote={vote_average}
+          id={id}
         />
       );
     }

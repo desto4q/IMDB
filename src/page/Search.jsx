@@ -38,6 +38,7 @@ function Search() {
     }) => {
       return (
         <Card
+        id={id}
         orig={original_name}
         type={media_type}
           alt={known_for}
