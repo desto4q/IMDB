@@ -389,7 +389,6 @@ nav {
   margin-top: 60px;
 
   iframe {
-    background-color: red;
     width: 100%;
     padding: 4px;
     height: 100%;
@@ -445,4 +444,17 @@ nav {
       padding: 4px;
     }
   }
+}
+
+
+@media screen and (max-width: 500px) {
+  
+  .video_page {
+    .details {
+      .movie_title{
+        font-size: 32px;
+      }
+    }
+  }
+  
 }
