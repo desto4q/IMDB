@@ -39,11 +39,11 @@ export let popular = async () => {
 
 
 // search page api route
-export let queryIMDB = async ({keyword}) => {
+export let queryIMDB = async ({keyword,page}) => {
   let url = `https://api.themoviedb.org/3/search/multi?query=loki&include_adult=false&language=en-US&page=1`;
 
   if (keyword) {
-  url = `https://api.themoviedb.org/3/search/multi?query=${keyword}&include_adult=false&language=en-US&page=1`;
+  url = `https://api.themoviedb.org/3/search/multi?query=${keyword}&include_adult=false&language=en-US&page=${page}`;
   }
   
   return fetch_func(url, options);
@@ -81,5 +81,34 @@ export let  get_movie_details = async ({id}) => {
   let url = `https://api.themoviedb.org/3/movie/${id}?language=en-US`
 
   return fetch_func(url,options)
+
+}
+
+export let get_series = async ({id}) => {
+  let url = `https://api.themoviedb.org/3/tv/${id}}`
+  return fetch_func(url,options)
+}
+
+export let get_episode_number = ({id,season}) => {
+let url = `
+https://api.themoviedb.org/3/tv/${id}/season/${season}`
+  return fetch_func(url,options)
+
+}
+
+
+export let fetch_series = ({page}) => {
+  
+  let url = "https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1";
+  if (page) {
+    url = `https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=${page}`
+  }
+  return fetch_func(url, options);
+} 
+
+export let  fetch_similar_series = ({id}) => {
+let url = `https://api.themoviedb.org/3/tv/${id}/similar`
+
+return fetch_func(url,options)
 
 }

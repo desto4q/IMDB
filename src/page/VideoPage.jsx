@@ -21,8 +21,8 @@ function VideoPage() {
       <div className="vid_cont">
         <iframe
           src={`https://vidsrc.to/embed/movie/${result[0] && result[0]}`}
-          frameborder="0"
-          allowfullscreen
+          frameBorder="0"
+          allowFullScreen
         ></iframe>
       </div>
 

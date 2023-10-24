@@ -49,7 +49,7 @@ function Nav() {
         <div className="links">
           <NavLink to={"/movie/1"}>Movie</NavLink>
 
-          <NavLink to={"/lol"}>series</NavLink>
+          <NavLink to={"/Tv-series/1"}>series</NavLink>
           <NavLink to={"/recent/1"}>Recent Movies</NavLink>
         </div>
       </div>

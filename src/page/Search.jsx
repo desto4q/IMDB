@@ -6,18 +6,22 @@ import { useQuery } from "react-query";
 import { queryIMDB } from "../api/api";
 import List from "../components/List";
 import Card from "../components/Card";
-
+import Pagination from "../components/Pagination";
+import { useParams } from "react-router-dom";
+import Spinner from "../components/Spinner";
 function Search() {
   const searchTerm = useSearchStore((state) => state.search);
   const [searchParams, setSearchParams] = useSearchParams();
 
+  const { page } = useParams();
+  console.log(page);
   useEffect(() => {
     setSearchParams({ q: searchTerm });
   }, [searchTerm]);
 
   const { data: searchResults } = useQuery(
-    [searchTerm],
-    async () => await queryIMDB({ keyword: searchTerm })
+    [searchTerm, page],
+    async () => await queryIMDB({ keyword: searchTerm, page: page })
   );
 
   useEffect(() => {
@@ -34,13 +38,13 @@ function Search() {
       poster_path,
       known_for,
       media_type,
-      original_name
+      original_name,
     }) => {
       return (
         <Card
-        id={id}
-        orig={original_name}
-        type={media_type}
+          id={id}
+          orig={original_name}
+          type={media_type}
           alt={known_for}
           key={id}
           img={poster_path}
@@ -57,6 +61,17 @@ function Search() {
     <div className="search">
       <div className="container">
         <List title={"search results"} data={data} />
+      </div>
+
+      {!data ? (
+        <div className="spin">
+          {" "}
+          <Spinner />{" "}
+        </div>
+      ) : null}
+
+      <div className="pagin">
+        <Pagination />
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Card({ img, title, release, lang, vote, alt, type, orig,id }) {
+function Series_card({ img, title, release, lang, vote, alt, type, orig,id }) {
 
   if (type && type == "person")  {
     return (
@@ -12,7 +12,7 @@ function Card({ img, title, release, lang, vote, alt, type, orig,id }) {
 
   let link_t = alt ? alt[0]?.title: title ? title: orig
   title = link_t?.replace(/\s+/g, "-")
-  let link_path = `/video/${title}-${id}`
+  let link_path = `/series/${title}-${id}`
   if (type == "tv") {
     link_path = `/series/${title}-${id}`
   }
@@ -39,5 +39,5 @@ function Card({ img, title, release, lang, vote, alt, type, orig,id }) {
   );
 }
 
-export default Card;
+export default Series_card;
  

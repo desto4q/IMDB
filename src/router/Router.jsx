@@ -8,6 +8,8 @@ import Search from '../page/Search'
 import Movie from '../page/Movie'
 import Now_Playing from '../page/Now_playing'
 import VideoPage from '../page/VideoPage'
+import Series from '../page/Series'
+import Tv_series from '../page/Tv_series'
 
 
 function Router() {
@@ -20,6 +22,8 @@ function Router() {
         <Route path='/movie/:page' element={<Movie/>} />
         <Route path='/recent/:page' element={<Now_Playing/>} />
         <Route path='/video/:name' element={<VideoPage/>} />
+        <Route path='/series/:id' element={<Series/>}/>
+        <Route path='/Tv-series/:page' element={<Tv_series/>} />
     </Routes>
     </BrowserRouter>
   )
