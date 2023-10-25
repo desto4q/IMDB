@@ -226,6 +226,9 @@ nav {
   position: relative;
   display: flex;
   flex-direction: column;
+  .line_desc {
+    display: none;
+  }
   .caro_img {
     width: 100%;
     height: 100%;
@@ -639,6 +642,7 @@ nav {
 }
 
 @media screen and (max-width: 750px) {
+
   .series {
     .info {
       flex-direction: column;
@@ -651,6 +655,34 @@ nav {
   }
 }
 @media screen and (max-width: 500px) {
+  .welcome {
+    .hero {
+      height: 400px !important;
+      .details {
+        // background-color: red;
+        width:70%;
+      }
+      .title {
+        font-size: 22px ;
+      }
+      .release,.time,.quality {
+        font-size: 12px;
+      }
+      .desc {
+        font-size: 12px;
+        display: none;
+      }
+      .line_desc {
+        display: block;
+      }
+      .links {
+        a {
+          font-size: 12px;
+        }
+      }
+    }
+
+  }
   .vid_cont {
     height: 300px !important;
   }

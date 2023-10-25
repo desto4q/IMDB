@@ -10,9 +10,6 @@ function WelcomePage() {
   
   let { data: current } = useQuery(["data"], now_playing);
 
-  useEffect(() => {
-    console.log(current);
-  }, [current]);
 
   let data = current?.results?.map(
     ({
