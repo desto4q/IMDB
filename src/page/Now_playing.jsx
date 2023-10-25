@@ -11,12 +11,14 @@ import Refetch from "../components/Refetch";
 
 function Now_Playing() {
   let { page } = useParams();
-  let { data: movie_results,isError,refetch } = useQuery(
+  let {
+    data: movie_results,
+    isError,
+    refetch,
+  } = useQuery(
     ["recent_movies", page],
     async () => await fetch_new_movies({ page: page })
   );
-
-
 
   let data = movie_results?.results?.map(
     ({
@@ -50,8 +52,9 @@ function Now_Playing() {
   return (
     <div className="movie head_room welcome">
       <div className="container">
-        <List title={"Recent"} data={data && data} /><Refetch isError={isError} refech={refetch} />
-s      </div>
+        <List title={"Recent"} data={data && data} />
+        <Refetch isError={isError} refech={refetch} />{" "}
+      </div>
       {!data ? <Spinner /> : null}
       <Refetch isError={isError} refech={refetch} />
       <Pagination />
