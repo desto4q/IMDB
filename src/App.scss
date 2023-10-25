@@ -8,7 +8,6 @@ $night: hsla(0, 0%, 4%, 1);
 
 $transition--speed: 0.4s;
 
-
 // * {
 //   flex-wrap: wrap;
 // }
@@ -351,7 +350,6 @@ nav {
     justify-content: center;
     margin-top: 24px;
   }
-    
 }
 
 .movie {
@@ -513,7 +511,7 @@ nav {
       .episode_list {
         display: flex;
         flex-direction: column;
-        gap:12px;
+        gap: 12px;
         flex-wrap: wrap;
       }
       .epi_list {
@@ -536,20 +534,61 @@ nav {
         align-items: center;
         .season_btn {
           background-color: $yinmn-blue;
-          
         }
         .season_active {
-          
           aspect-ratio: 1/1;
           background-color: $orange-peel;
         }
 
-        .season_btn,.season_active {
+        .season_btn,
+        .season_active {
           padding: 8px;
           border-radius: 2px;
           cursor: pointer;
         }
       }
+    }
+  }
+}
+
+.watch {
+  .episode_list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .epi_list {
+    display: flex;
+    gap: 8px;
+    padding: 4px;
+    flex-wrap: wrap;
+    align-items: center;
+    a {
+      background-color: $tea-green;
+      color: black;
+      padding: 8px;
+      border-radius: 4px;
+    }
+  }
+  .season {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+    .season_btn {
+      background-color: $yinmn-blue;
+    }
+    .season_active {
+      aspect-ratio: 1/1;
+      background-color: $orange-peel;
+    }
+
+    .season_btn,
+    .season_active {
+      padding: 8px;
+      border-radius: 2px;
+      cursor: pointer;
     }
   }
 }
