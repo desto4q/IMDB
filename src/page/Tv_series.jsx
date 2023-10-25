@@ -16,11 +16,7 @@ function Tv_series() {
     async () => await fetch_series({ page: page })
   );
 
-  useEffect(() => {
-    if (movie_results) {
-      console.log(movie_results);
-    }
-  }, [movie_results]);
+
 
   let data = movie_results?.results?.map(
     ({

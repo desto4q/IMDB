@@ -22,9 +22,7 @@ function Carousel() {
 
   let { data: caro_data } = useQuery(["caro_data"], popular);
 
-  useEffect(()=>{
-    console.log(caro_data)
-  },[caro_data])
+
   return (
     <Swiper
       speed={1000}
