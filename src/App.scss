@@ -638,7 +638,22 @@ nav {
   }
 }
 
+@media screen and (max-width: 750px) {
+  .series {
+    .info {
+      flex-direction: column;
+      img {
+        all: unset;
+        height: 300px;
+        object-fit: contain;
+      }
+    }
+  }
+}
 @media screen and (max-width: 500px) {
+  .vid_cont {
+    height: 300px !important;
+  }
   nav {
     .side_bar {
       display: grid;
