@@ -64,13 +64,13 @@ nav {
       flex-direction: column;
       gap: 12px;
       font-size: 22px;
-      
+
       a.active {
         color: $orange-peel;
       }
     }
   }
-  .ham  {
+  .ham {
     display: none;
     z-index: 10;
   }
@@ -642,7 +642,6 @@ nav {
 }
 
 @media screen and (max-width: 750px) {
-
   .series {
     .info {
       flex-direction: column;
@@ -660,12 +659,14 @@ nav {
       height: 400px !important;
       .details {
         // background-color: red;
-        width:70%;
+        width: 70%;
       }
       .title {
-        font-size: 22px ;
+        font-size: 22px;
       }
-      .release,.time,.quality {
+      .release,
+      .time,
+      .quality {
         font-size: 12px;
       }
       .desc {
@@ -681,7 +682,6 @@ nav {
         }
       }
     }
-
   }
   .vid_cont {
     height: 300px !important;
@@ -690,7 +690,9 @@ nav {
     .side_bar {
       display: grid;
     }
-    .ham {display: block;}
+    .ham {
+      display: block;
+    }
     .mobile_logo {
       display: grid;
       z-index: 10;
@@ -701,7 +703,7 @@ nav {
     }
     .content {
       gap: 12px;
-      .logo{
+      .logo {
         display: none;
       }
       .links {
@@ -712,8 +714,23 @@ nav {
   .video_page {
     .details {
       .movie_title {
-        font-size: 32px;
+        font-size: 22px;
       }
+      .genre {
+        flex-wrap: wrap;
+        .tag {
+          font-size: 12px;
+        }
+      }
+      .desc {
+        font-size: 12px;
+      }
+      .epi_list {
+        a {
+          font-size: 12px;
+        }
+      }
+
     }
   }
 

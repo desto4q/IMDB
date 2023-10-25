@@ -59,7 +59,7 @@ function Watch() {
         <div className="desc">{movie_details?.overview}</div>
         <div className="episode_list">
           <div className="season">
-            season:
+            Season:
             {movie_details?.seasons?.map(({ season_number, id }) => {
               if (season == season_number) {
                 return (
@@ -82,7 +82,7 @@ function Watch() {
             })}
           </div>
           <div className="epi_list">
-            episodes:
+            Episodes:
             {episode_list?.episodes?.map(({ id, episode_number }) => {
               return (
                 <Link
