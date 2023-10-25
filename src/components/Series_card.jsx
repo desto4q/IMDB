@@ -1,22 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Series_card({ img, title, release, lang, vote, alt, type, orig,id }) {
-
-  if (type && type == "person")  {
-    return (
-      null
-    )
-  } 
-
-
-  let link_t = alt ? alt[0]?.title: title ? title: orig
-  title = link_t?.replace(/\s+/g, "-")
-  let link_path = `/series/${title}-${id}`
-  if (type == "tv") {
-    link_path = `/series/${title}-${id}`
+function Series_card({
+  img,
+  title,
+  release,
+  lang,
+  vote,
+  alt,
+  type,
+  orig,
+  id,
+  name,
+}) {
+  if (type && type == "person") {
+    return null;
   }
-  
+
+  let link_t = alt ? alt[0]?.title : title ? title : orig;
+  title = link_t?.replace(/\s+/g, "-");
+  let link_path = `/series/${title}-${id}`;
+  if (type == "tv") {
+    link_path = `/series/${title}-${id}`;
+  }
+
   return (
     <Link className="card" to={link_path}>
       <img
@@ -27,7 +34,7 @@ function Series_card({ img, title, release, lang, vote, alt, type, orig,id }) {
         alt=""
       />
       <div className="movie_title">
-        {alt ? alt[0]?.title : title ? title : orig && orig}
+        {name ? name : alt ? alt[0]?.title : title ? title : orig && orig}
       </div>
       <div className="movie_info">
         <div>{release && release && release.slice(0, 4)}</div>
@@ -40,4 +47,3 @@ function Series_card({ img, title, release, lang, vote, alt, type, orig,id }) {
 }
 
 export default Series_card;
- 

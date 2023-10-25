@@ -10,6 +10,7 @@ import Now_Playing from '../page/Now_playing'
 import VideoPage from '../page/VideoPage'
 import Series from '../page/Series'
 import Tv_series from '../page/Tv_series'
+import Watch from '../page/Watch'
 
 
 function Router() {
@@ -24,6 +25,7 @@ function Router() {
         <Route path='/video/:name' element={<VideoPage/>} />
         <Route path='/series/:id' element={<Series/>}/>
         <Route path='/Tv-series/:page' element={<Tv_series/>} />
+        <Route path='/watch/:id/season/:seasonid/episode/:episodeid' element={<Watch/>} />
     </Routes>
     </BrowserRouter>
   )

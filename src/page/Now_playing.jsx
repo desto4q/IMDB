@@ -6,16 +6,17 @@ import { useEffect } from "react";
 import List from "../components/List";
 import Card from "../components/Card";
 import Pagination from "../components/Pagination";
+import Spinner from "../components/Spinner";
+import Refetch from "../components/Refetch";
 
 function Now_Playing() {
-    
   let { page } = useParams();
-  let { data:movie_results } = useQuery(
+  let { data: movie_results,isError,refetch } = useQuery(
     ["recent_movies", page],
     async () => await fetch_new_movies({ page: page })
   );
 
-  // useEffect(()=>{console.log(movie_results)},[movie_results])
+
 
   let data = movie_results?.results?.map(
     ({
@@ -27,12 +28,12 @@ function Now_Playing() {
       poster_path,
       known_for,
       media_type,
-      original_name
+      original_name,
     }) => {
       return (
         <Card
-        orig={original_name}
-        type={media_type}
+          orig={original_name}
+          type={media_type}
           alt={known_for}
           key={id}
           img={poster_path}
@@ -49,9 +50,11 @@ function Now_Playing() {
   return (
     <div className="movie head_room welcome">
       <div className="container">
-        <List title={"Recent"} data={data &&data}/>
-      </div>
-      <Pagination/>
+        <List title={"Recent"} data={data && data} /><Refetch isError={isError} refech={refetch} />
+s      </div>
+      {!data ? <Spinner /> : null}
+      <Refetch isError={isError} refech={refetch} />
+      <Pagination />
     </div>
   );
 }

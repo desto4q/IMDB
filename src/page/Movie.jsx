@@ -6,10 +6,12 @@ import { useEffect } from "react";
 import List from "../components/List";
 import Card from "../components/Card";
 import Pagination from "../components/Pagination";
+import Refetch from "../components/Refetch";
+import Spinner from "../components/Spinner";
 
 function Movie() {
   let { page } = useParams();
-  let { data: movie_results } = useQuery(
+  let { data: movie_results,isError,refetch } = useQuery(
     ["movie_list", page],
     async () => await fetch_movies({ page: page })
   );
@@ -48,6 +50,13 @@ function Movie() {
       <div className="container">
         <List title={"Movies"} data={data && data} />
       </div>
+      {!data ? (
+        <div className="spin">
+          {" "}
+          <Spinner />{" "}
+        </div>
+      ) : null}
+      <Refetch isError={isError} refech={refetch}/>
       <Pagination />
     </div>
   );

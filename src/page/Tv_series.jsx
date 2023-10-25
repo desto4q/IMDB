@@ -7,6 +7,7 @@ import List from "../components/List";
 import Card from "../components/Card";
 import Pagination from "../components/Pagination";
 import Series_card from "../components/Series_card";
+import Spinner from "../components/Spinner";
 
 function Tv_series() {
   let { page } = useParams();
@@ -15,12 +16,11 @@ function Tv_series() {
     async () => await fetch_series({ page: page })
   );
 
-  useEffect(()=>{
+  useEffect(() => {
     if (movie_results) {
-      console.log(movie_results)
+      console.log(movie_results);
     }
-  },[movie_results
-  ])
+  }, [movie_results]);
 
   let data = movie_results?.results?.map(
     ({
@@ -33,9 +33,11 @@ function Tv_series() {
       known_for,
       media_type,
       original_name,
+      name,
     }) => {
       return (
         <Series_card
+          name={name}
           id={id}
           orig={original_name}
           type={media_type}
@@ -56,6 +58,7 @@ function Tv_series() {
       <div className="container">
         <List title={"Series"} data={data && data} />
       </div>
+      {!data ? <Spinner /> : null}
       <Pagination />
     </div>
   );

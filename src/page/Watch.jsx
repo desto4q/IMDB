@@ -1,27 +1,20 @@
 import React from "react";
-import { useQuery } from "react-query";
-import { useLocation } from "react-router-dom";
-import { get_movie_details } from "../api/api";
-import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-function VideoPage() {
-  let location = useLocation().pathname;
+function Watch() {
+  let { seasonid, episodeid, id } = useParams();
+
   let regex = /\d+$/;
+  let result = regex.exec(id);
+  console.log(result[0]);
 
-  let result = regex.exec(location);
-  const { data: movie_details } = useQuery([result[0]], () =>
-    get_movie_details({ id: result[0] })
-  );
-
-  useEffect(() => {
-    console.log(movie_details);
-  }, [movie_details]);
+  let movie_details;
   return (
     <div className="video_page welcome ">
       <div className="vid_cont">
         <iframe
-          src={`https://vidsrc.to/embed/movie/${result[0] && result[0]}`}
-          frameBorder="0" 
+          src={`https://vidsrc.to/embed/tv/${result[0]}/${seasonid}/${episodeid}`}
+          frameBorder="0"
           allowFullScreen
         ></iframe>
       </div>
@@ -29,9 +22,8 @@ function VideoPage() {
       <div className="details">
         <div className="movie_title">
           {movie_details?.title}
-          
+
           <div className="release">
-            
             {movie_details?.release_date?.slice(0, 4)}
           </div>
         </div>
@@ -53,4 +45,4 @@ function VideoPage() {
   );
 }
 
-export default VideoPage;
+export default Watch;
