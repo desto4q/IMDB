@@ -12,6 +12,7 @@
   "dependencies": {
     "@tabler/icons-react": "^2.39.0",
     "hamburger-react": "^2.5.0",
+    "iframe-to-video": "^1.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-lines-ellipsis": "^0.15.4",

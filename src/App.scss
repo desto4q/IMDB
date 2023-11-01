@@ -92,7 +92,7 @@ nav {
     max-width: 1100px;
     padding: 0 4px;
     flex-shrink: 0;
-
+    gap: 12px;
     .logo {
       // background-color: red;
       width: 120px;
@@ -653,7 +653,7 @@ nav {
     }
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .welcome {
     .hero {
       height: 400px !important;

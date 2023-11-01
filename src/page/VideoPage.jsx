@@ -3,6 +3,7 @@ import { useQuery } from "react-query";
 import { useLocation } from "react-router-dom";
 import { get_movie_details } from "../api/api";
 import { useEffect } from "react";
+import { useRef } from "react";
 
 function VideoPage() {
   let location = useLocation().pathname;
@@ -12,16 +13,17 @@ function VideoPage() {
   const { data: movie_details } = useQuery([result[0]], () =>
     get_movie_details({ id: result[0] })
   );
+  let frame_ref = useRef();
 
-  useEffect(() => {
-    console.log(movie_details);
-  }, [movie_details]);
+
   return (
     <div className="video_page welcome ">
+      
       <div className="vid_cont">
         <iframe
+          ref={frame_ref}
           src={`https://vidsrc.to/embed/movie/${result[0] && result[0]}`}
-          frameBorder="0" 
+          frameBorder="0"
           allowFullScreen
         ></iframe>
       </div>
@@ -29,9 +31,8 @@ function VideoPage() {
       <div className="details">
         <div className="movie_title">
           {movie_details?.title}
-          
+
           <div className="release">
-            
             {movie_details?.release_date?.slice(0, 4)}
           </div>
         </div>

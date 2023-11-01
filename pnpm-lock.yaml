@@ -11,6 +11,9 @@ dependencies:
   hamburger-react:
     specifier: ^2.5.0
     version: 2.5.0(react@18.2.0)
+  iframe-to-video:
+    specifier: ^1.0.0
+    version: 1.0.0
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -299,6 +302,40 @@ packages:
       '@babel/helper-string-parser': 7.22.5
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
+
+  /@cliqz/adblocker-content@1.26.10:
+    resolution: {integrity: sha512-tbN5c+V7Z1XJp27zIhxPBXqSiOSQdzj1B6OJ/sUoGcPOg7GJ6W8Uz6NquI6CkNWJkRhNyLwGWaT+JsQVvdgTqQ==}
+    dependencies:
+      '@cliqz/adblocker-extended-selectors': 1.26.10
+    dev: false
+
+  /@cliqz/adblocker-extended-selectors@1.26.10:
+    resolution: {integrity: sha512-ElSkgMM8z83AZQJQcyAAaJ/MojkAcHEYKuZTEA5KbjSNM/7hYoQMwvaMuc/KscNbDuED85+GKwmY4LrpwDAYQA==}
+    dev: false
+
+  /@cliqz/adblocker-playwright@1.26.10(playwright@1.39.0):
+    resolution: {integrity: sha512-BT6ke0PUT3Hx24O/rbglOhboSGyUimR2aWpms/LGgWoFnGaqwv3T24X4vk1Z1jxuTioR1GEujpT7AeK1r+zukQ==}
+    peerDependencies:
+      playwright: ^1.x
+    dependencies:
+      '@cliqz/adblocker': 1.26.10
+      '@cliqz/adblocker-content': 1.26.10
+      playwright: 1.39.0
+      tldts-experimental: 6.0.17
+    dev: false
+
+  /@cliqz/adblocker@1.26.10:
+    resolution: {integrity: sha512-aZjo0BYMDwU0OzU7Jeo42RNeYL9ocn8/xxC1UYiSZ71sQwMZG2i3YmL/monLJIVo9qP0GdTSwvthvpHHhJyHQQ==}
+    dependencies:
+      '@cliqz/adblocker-content': 1.26.10
+      '@cliqz/adblocker-extended-selectors': 1.26.10
+      '@remusao/guess-url-type': 1.2.1
+      '@remusao/small': 1.2.1
+      '@remusao/smaz': 1.9.1
+      '@types/chrome': 0.0.248
+      '@types/firefox-webext-browser': 111.0.3
+      tldts-experimental: 6.0.17
+    dev: false
 
   /@emotion/is-prop-valid@1.2.1:
     resolution: {integrity: sha512-61Mf7Ufx4aDxx1xlDeOm8aFFigGHE4z+0sKCa+IHCeZKiyP9RLD0Mmx7m8b9/Cf37f7NAvQOOJAbQQGVr5uERw==}
@@ -624,6 +661,35 @@ packages:
     engines: {node: '>=14.0.0'}
     dev: false
 
+  /@remusao/guess-url-type@1.2.1:
+    resolution: {integrity: sha512-rbOqre2jW8STjheOsOaQHLgYBaBZ9Owbdt8NO7WvNZftJlaG3y/K9oOkl8ZUpuFBisIhmBuMEW6c+YrQl5inRA==}
+    dev: false
+
+  /@remusao/small@1.2.1:
+    resolution: {integrity: sha512-7MjoGt0TJMVw1GPKgWq6SJPws1SLsUXQRa43Umht+nkyw2jnpy3WpiLNqGdwo5rHr5Wp9B2W/Pm5RQp656UJdw==}
+    dev: false
+
+  /@remusao/smaz-compress@1.9.1:
+    resolution: {integrity: sha512-E2f48TwloQu3r6BdLOGF2aczeH7bJ/32oJGqvzT9SKur0cuUnLcZ7ZXP874E2fwmdE+cXzfC7bKzp79cDnmeyw==}
+    dependencies:
+      '@remusao/trie': 1.4.1
+    dev: false
+
+  /@remusao/smaz-decompress@1.9.1:
+    resolution: {integrity: sha512-TfjKKprYe3n47od8auhvJ/Ikj9kQTbDTe71ynKlxslrvvUhlIV3VQSuwYuMWMbdz1fIs0H/fxCN1Z8/H3km6/A==}
+    dev: false
+
+  /@remusao/smaz@1.9.1:
+    resolution: {integrity: sha512-e6BLuP8oaXCZ9+v46Is4ilAZ/Vq6YLgmBP204Ixgk1qTjXmqvFYG7+AS7v9nsZdGOy96r9DWGFbbDVgMxwu1rA==}
+    dependencies:
+      '@remusao/smaz-compress': 1.9.1
+      '@remusao/smaz-decompress': 1.9.1
+    dev: false
+
+  /@remusao/trie@1.4.1:
+    resolution: {integrity: sha512-yvwa+aCyYI/UjeD39BnpMypG8N06l86wIDW1/PAc6ihBRnodIfZDwccxQN3n1t74wduzaz74m4ZMHZnB06567Q==}
+    dev: false
+
   /@tabler/icons-react@2.39.0(react@18.2.0):
     resolution: {integrity: sha512-MyUK1jqtmHPZBnDXqIc1Y5OnfoqG+tGaSB1/gcl0mlY462fJ5f3QB0ZIZzAHMAGYb6K2iJSdFIFavhcgpDDZ7Q==}
     peerDependencies:
@@ -666,6 +732,31 @@ packages:
     dependencies:
       '@babel/types': 7.23.0
     dev: true
+
+  /@types/chrome@0.0.248:
+    resolution: {integrity: sha512-qtBzxZD1v3eWZn8XxH1i07pAhzJDHnxJBBVy7bmntXxXKxjzNXYxD41teqa5yOcX/Yy8brRFGZESEzGoINvBDg==}
+    dependencies:
+      '@types/filesystem': 0.0.34
+      '@types/har-format': 1.2.14
+    dev: false
+
+  /@types/filesystem@0.0.34:
+    resolution: {integrity: sha512-La4bGrgck8/rosDUA1DJJP8hrFcKq0BV6JaaVlNnOo1rJdJDcft3//slEbAmsWNUJwXRCc0DXpeO40yuATlexw==}
+    dependencies:
+      '@types/filewriter': 0.0.31
+    dev: false
+
+  /@types/filewriter@0.0.31:
+    resolution: {integrity: sha512-12df1utOvPC80+UaVoOO1d81X8pa5MefHNS+gWX9R2ucSESpMz9K5QwlTWDGKASrzCpSFwj7NPYh+nTsolgEGA==}
+    dev: false
+
+  /@types/firefox-webext-browser@111.0.3:
+    resolution: {integrity: sha512-yboaUEJfY6AGB1hJIWzRGNa/qQUCC/2CAgBSWkdJ8rml4k0bXIyxlWYLSRTr6jHT29gdHkdHsPVuF5McSNERfw==}
+    dev: false
+
+  /@types/har-format@1.2.14:
+    resolution: {integrity: sha512-pEmBAoccWvO6XbSI8A7KvIDGEoKtlLWtdqVCKoVBcCDSFvR4Ijd7zGLu7MWGEqk2r8D54uWlMRt+VZuSrfFMzQ==}
+    dev: false
 
   /@types/prop-types@15.7.9:
     resolution: {integrity: sha512-n1yyPsugYNSmHgxDFjicaI2+gCNjsBck8UX9kuofAKlc0h1bL+20oSF72KeNaW2DUlesbEVCFgyV2dPGTiY42g==}
@@ -965,6 +1056,14 @@ packages:
 
   /convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
+
+  /cross-fetch@3.1.8:
+    resolution: {integrity: sha512-cvA+JwZoU0Xq+h6WkMvAUqPEYy92Obet6UdKLfW60qn99ftItKjB5T+BkyWOFWe2pUyfQ+IJHmpOTznqk1M6Kg==}
+    dependencies:
+      node-fetch: 2.7.0
+    transitivePeerDependencies:
+      - encoding
+    dev: false
 
   /cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
@@ -1373,6 +1472,14 @@ packages:
   /fs.realpath@1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
 
+  /fsevents@2.3.2:
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
+    requiresBuild: true
+    dev: false
+    optional: true
+
   /fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -1525,6 +1632,16 @@ packages:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
     dependencies:
       react-is: 16.13.1
+    dev: false
+
+  /iframe-to-video@1.0.0:
+    resolution: {integrity: sha512-QzAHQgixPBzKaTgQl8VzWIqO7A6gl1HiUl7UvWBD+IjsNE4C9WM3od1HIigwqzsH99MEvitg9G1Eb0CQRPAF+g==}
+    dependencies:
+      '@cliqz/adblocker-playwright': 1.26.10(playwright@1.39.0)
+      cross-fetch: 3.1.8
+      playwright: 1.39.0
+    transitivePeerDependencies:
+      - encoding
     dev: false
 
   /ignore@5.2.4:
@@ -1867,6 +1984,18 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
 
+  /node-fetch@2.7.0:
+    resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
+    engines: {node: 4.x || >=6.0.0}
+    peerDependencies:
+      encoding: ^0.1.0
+    peerDependenciesMeta:
+      encoding:
+        optional: true
+    dependencies:
+      whatwg-url: 5.0.0
+    dev: false
+
   /node-releases@2.0.13:
     resolution: {integrity: sha512-uYr7J37ae/ORWdZeQ1xxMJe3NtdmqMC/JZK+geofDrkLUApKRHPd18/TxtBOJ4A0/+uUIliorNrfYV6s1b02eQ==}
 
@@ -1998,6 +2127,22 @@ packages:
   /picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
+
+  /playwright-core@1.39.0:
+    resolution: {integrity: sha512-+k4pdZgs1qiM+OUkSjx96YiKsXsmb59evFoqv8SKO067qBA+Z2s/dCzJij/ZhdQcs2zlTAgRKfeiiLm8PQ2qvw==}
+    engines: {node: '>=16'}
+    hasBin: true
+    dev: false
+
+  /playwright@1.39.0:
+    resolution: {integrity: sha512-naE5QT11uC/Oiq0BwZ50gDmy8c8WLPRTEWuSSFVG2egBka/1qMoSqYQcROMT9zLwJ86oPofcTH2jBY/5wWOgIw==}
+    engines: {node: '>=16'}
+    hasBin: true
+    dependencies:
+      playwright-core: 1.39.0
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: false
 
   /postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
@@ -2387,6 +2532,16 @@ packages:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
     dev: true
 
+  /tldts-core@6.0.17:
+    resolution: {integrity: sha512-uMwywA3xjriVrbX28gwflFsf3UAaW7fleo1cBbi605PiByydyldo8QlZRVq5a8SF8zwypCac7icn6UODN5+xWg==}
+    dev: false
+
+  /tldts-experimental@6.0.17:
+    resolution: {integrity: sha512-uX5pb1XEYFO26Hc7al2QCkI9fBuJd7I7QANH5dLMxApmwvPujpY9p35KusGy8femCpa3gh1td9f8amWLZuXqCA==}
+    dependencies:
+      tldts-core: 6.0.17
+    dev: false
+
   /to-fast-properties@2.0.0:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
     engines: {node: '>=4'}
@@ -2397,6 +2552,10 @@ packages:
     dependencies:
       is-number: 7.0.0
     dev: true
+
+  /tr46@0.0.3:
+    resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
+    dev: false
 
   /type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
@@ -2526,6 +2685,17 @@ packages:
 
   /webfontloader@1.6.28:
     resolution: {integrity: sha512-Egb0oFEga6f+nSgasH3E0M405Pzn6y3/9tOVanv/DLfa1YBIgcv90L18YyWnvXkRbIM17v5Kv6IT2N6g1x5tvQ==}
+    dev: false
+
+  /webidl-conversions@3.0.1:
+    resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
+    dev: false
+
+  /whatwg-url@5.0.0:
+    resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
+    dependencies:
+      tr46: 0.0.3
+      webidl-conversions: 3.0.1
     dev: false
 
   /which-boxed-primitive@1.0.2:
